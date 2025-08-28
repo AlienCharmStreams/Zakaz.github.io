@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ прохождения игр | AlienCharm</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            overflow-x: hidden;
+            position: relative;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Анимированные звёзды (в 2 слоя для глубины) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="3000" opacity="0.7"><g fill="white"><circle cx="50" cy="80" r="0.6"/><circle cx="220" cy="150" r="0.4"/><circle cx="400" cy="300" r="0.8"/><circle cx="600" cy="50" r="0.5"/><circle cx="800" cy="400" r="0.7"/><circle cx="1000" cy="200" r="0.9"/><circle cx="1200" cy="350" r="0.4"/><circle cx="1400" cy="100" r="0.6"/><circle cx="1600" cy="250" r="0.5"/><circle cx="1800" cy="500" r="0.8"/><circle cx="100" cy="600" r="0.7"/><circle cx="300" cy="700" r="0.5"/><circle cx="500" cy="900" r="0.9"/><circle cx="700" cy="650" r="0.4"/><circle cx="900" cy="800" r="0.6"/><circle cx="1100" cy="950" r="0.8"/><circle cx="1300" cy="750" r="0.5"/><circle cx="1500" cy="850" r="0.7"/><circle cx="1700" cy="1100" r="0.9"/><circle cx="200" cy="1200" r="0.6"/><circle cx="450" cy="1300" r="0.5"/><circle cx="750" cy="1400" r="0.8"/><circle cx="950" cy="1250" r="0.4"/><circle cx="1250" cy="1350" r="0.7"/><circle cx="1550" cy="1500" r="0.9"/></g></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="3000" opacity="0.4"><g fill="white"><circle cx="70" cy="120" r="0.3"/><circle cx="270" cy="220" r="0.5"/><circle cx="470" cy="420" r="0.2"/><circle cx="670" cy="120" r="0.4"/><circle cx="870" cy="520" r="0.6"/><circle cx="1070" cy="320" r="0.3"/><circle cx="1270" cy="470" r="0.5"/><circle cx="1470" cy="170" r="0.2"/><circle cx="1670" cy="370" r="0.4"/><circle cx="1870" cy="620" r="0.6"/><circle cx="170" cy="720" r="0.5"/><circle cx="370" cy="820" r="0.3"/><circle cx="570" cy="1020" r="0.7"/><circle cx="770" cy="770" r="0.2"/><circle cx="970" cy="920" r="0.4"/><circle cx="1170" cy="1070" r="0.6"/><circle cx="1370" cy="870" r="0.3"/><circle cx="1570" cy="970" r="0.5"/><circle cx="1770" cy="1220" r="0.7"/><circle cx="270" cy="1320" r="0.4"/><circle cx="550" cy="1420" r="0.3"/><circle cx="850" cy="1560" r="0.6"/><circle cx="1050" cy="1370" r="0.2"/><circle cx="1350" cy="1470" r="0.5"/><circle cx="1650" cy="1620" r="0.7"/></g></svg>');
+            animation: starsMove 120s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes starsMove {
+            to { transform: translateY(-1000px); }
+        }
+
+        /* Мерцание некоторых звёзд */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="3000"><g fill="white"><circle cx="150" cy="180" r="0.5" opacity="0.5"/><circle cx="650" cy="480" r="0.7" opacity="0.5"/><circle cx="1150" cy="880" r="0.4" opacity="0.5"/><circle cx="1650" cy="1580" r="0.6" opacity="0.5"/></g></svg>');
+            animation: twinkle 4s ease-in-out infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Контент */
+        h1 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 10px rgba(108, 92, 231, 0.3), 
+                         0 0 20px rgba(108, 92, 231, 0.2);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6c5ce7, transparent);
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            padding-bottom: 0.5rem;
+            position: relative;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            text-shadow: 0 0 8px rgba(108, 92, 231, 0.4);
+        }
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #6c5ce7 0%, transparent 100%);
+        }
+
+        h3 {
+            color: #6c5ce7;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
+        }
+
+        /* Списки с анимированными звёздочками */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1.05rem;
+            letter-spacing: 0.2px;
+        }
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #6c5ce7;
+            font-size: 0.9em;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 5px rgba(108, 92, 231, 0.7);
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 10px rgba(108, 92, 231, 1); }
+        }
+
+        /* Подпункты с мини-звёздами */
+        ul ul li::before {
+            content: "⋆";
+            animation: none;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.7em;
+            top: 0.2em;
+            text-shadow: 0 0 3px rgba(255,255,255,0.5);
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+        }
+        .subtext {
+            color: #aaa;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 0.1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .section {
+            background: rgba(17, 17, 17, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3),
+                        inset 0 0 10px rgba(108, 92, 231, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4),
+                        inset 0 0 15px rgba(108, 92, 231, 0.1);
+        }
+
+        .tariff {
+            background: rgba(108, 92, 231, 0.1);
+            border-left: 3px solid #6c5ce7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning {
+            background: rgba(231, 92, 92, 0.1);
+            border-left: 3px solid #e75c5c;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .faq-item {
+            background: rgba(92, 231, 180, 0.1);
+            border-left: 3px solid #5ce7b4;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        a {
+            color: #6c5ce7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #8c7bee;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <h1>ЗАКАЗЫ ИГР</h1>
+    <p style="text-align: center; color: #aaa; margin-bottom: 2rem; text-shadow: 0 0 5px rgba(255,255,255,0.1);">Ты можешь заказать как единичный стрим, так и полноценное прохождение любимой игры.</p>
+
+    <div class="section">
+        <h2>💎 ТАРИФЫ</h2>
+        
+        <div class="tariff">
+            <h3>• 🌜 Вечерний сеанс (5-6 часов)</h3>
+            <p><span class="highlight">7000 руб.</span></p>
+        </div>
+
+        <div class="tariff">
+            <h3>• 🚀 Короткая игра (до 15 часов геймплея)</h3>
+            <p><span class="highlight">10 000 руб.</span></p>
+        </div>
+
+        <div class="tariff">
+            <h3>• 🎪 Стандартный проект (15-30 часов геймплея)</h3>
+            <p><span class="highlight">20 000 руб.</span></p>
+            <p class="subtext">Примеры: Ведьмак, Готика</p>
+        </div>
+
+        <div class="tariff">
+            <h3>• 🏆 Марафон (50+ часов геймплея)</h3>
+            <p><span class="highlight">50 000 руб.</span></p>
+        </div>
+
+        <p>Как определить длительность геймплея?<br>
+        Для определения длительности игры мы используем данные сайта <a href="https://howlongtobeat.com/" target="_blank">HowLongToBeat.com</a> (значение "Main + Extra"). Это специализированный сайт и база данных, куда сами игроки со всего мира вносят данные о времени, которое они потратили на прохождение той или иной игры.</p>
+    </div>
+
+    <div class="section">
+        <h2>❗️ ВАЖНО</h2>
+        
+        <p>1. В стоимость заказа не входит цена самой игры. Если её нет в моей библиотеке, потребуется дополнительно приобрести ключ или копию игры, либо другие доступы.</p>
+        
+        <p>2. 🚫 Ограничения на заказ.<br>К заказу не принимаются:</p>
+        <ul>
+            <li>Консольные эксклюзивы (у меня ПК)</li>
+            <li>MMORPG и онлайн-игры (World of Warcraft, Lost Ark)</li>
+            <li>PvP- и сессионные игры (Dota 2, CS2, League of Legends, Apex Legends)</li>
+            <li>Спортивные симуляторы (FIFA, NBA 2K)</li>
+            <li>Игры с контентом 18+ или запрещённые правилами стриминговых платформ.</li>
+        </ul>
+        
+        <p>Сомневаешься? Напиши свой вопрос в комментариях под последним постом в моем ТГ-канале <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a> — свяжусь с тобой и проясним нюансы до оплаты.</p>
+        
+        <div class="warning">
+            <p>3. ⏳ Особенности марафонов</p>
+            <p>Игры длительностью 50+ часов я прохожу в рамках расписания стримов, чередуя их с другим запланированным контентом. Это позволяет сохранить интерес и не заставлять остальных зрителей смотреть только на одну игру неделями.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>❓ ВОПРОСЫ (FAQ)</h2>
+        
+        <div class="faq-item">
+            <h3>Q: Как происходит оплата и заказ?</h3>
+            <p>A: Оплата происходит одним донатом через DonationAlerts, либо DonatePay. В комментарии к донату укажите название игры.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Q: Что если я передумаю?</h3>
+            <p>A: Если игра ещё не была начата, возможен перенос суммы на другой заказ. Если стрим уже был начат — перенос невозможен. Донат возврату не подлежит.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Q: Как уточнить вопросы заранее до оплаты?</h3>
+            <p>A: Написать во время стрима (отвечу я или мои модераторы) или в комментариях под последним постом в Телеграм-канале - <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
