@@ -290,18 +290,12 @@
             border-left: 3px solid #e74c3c;
         }
 
-        /* Стиль для анимированного светящегося заголовка */
-        .glowing-title {
-            color: #ffffff;
+        /* Стиль для заголовка в блоке note */
+        .note-title {
+            color: #6c5ce7;
             font-weight: 600;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-            animation: subtlePulse 3s ease-in-out infinite;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
-        }
-
-        @keyframes subtlePulse {
-            0%, 100% { text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); }
-            50% { text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); }
         }
 
         /* Адаптивность */
@@ -375,7 +369,7 @@
         </div>
         
         <div class="note">
-            <p class="glowing-title">Как определить длительность геймплея?</p>
+            <p class="note-title">Как определить длительность геймплея?</p>
             <p>Для определения длительности игры мы используем данные сайта <a href="https://howlongtobeat.com/" target="_blank">HowLongToBeat.com</a> (значение "Main + Extra"). Это специализированный сайт и база данных, куда сами игроки со всего мира вносят данные о времени, которое они потратили на прохождение той или иной игры.</p>
         </div>
     </div>
