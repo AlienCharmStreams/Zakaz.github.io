@@ -192,34 +192,29 @@
             margin-right: 0.5rem;
         }
 
-        /* Нумерованный список для важных пунктов */
-        .numbered-list {
-            list-style: none;
-            counter-reset: important-counter;
-        }
-
-        .numbered-list li {
+        /* Стили для важных пунктов */
+        .important-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             position: relative;
+            padding-left: 2rem;
         }
 
-        .numbered-list li:last-child {
+        .important-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .numbered-list li::before {
-            content: counter(important-counter) ".";
-            counter-increment: important-counter;
+        .important-item::before {
+            content: attr(data-number) ".";
             color: #6c5ce7;
             font-weight: 600;
             font-size: 1rem;
-            margin-right: 0.5rem;
             position: absolute;
-            left: -1.5rem;
+            left: 0;
+            top: 0;
         }
 
         .important-title {
@@ -227,7 +222,7 @@
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 0.5rem;
-            display: inline;
+            display: block;
         }
 
         .important-desc {
@@ -322,9 +317,8 @@
                 align-self: flex-start;
             }
             
-            .numbered-list li::before {
-                position: static;
-                margin-right: 0.5rem;
+            .important-item {
+                padding-left: 1.5rem;
             }
         }
     </style>
@@ -377,29 +371,27 @@
     <div class="section">
         <h2>❗️ ВАЖНО</h2>
         
-        <ol class="numbered-list">
-            <li>
-                <span class="important-title">В стоимость заказа не входит цена самой игры. 🚫</span>
-                <div class="important-desc">Если её нет в моей библиотеке, потребуется дополнительно приобрести ключ или копию игры, либо другие доступы.</div>
-            </li>
-            
-            <li>
-                <span class="important-title">Ограничения на заказ. ⏳</span>
-                <div class="important-desc">К заказу не принимаются:</div>
-                <ul class="compact-list">
-                    <li>Консольные эксклюзивы (у меня ПК)</li>
-                    <li>MMORPG и онлайн-игры (World of Warcraft, Lost Ark)</li>
-                    <li>PvP- и сессионные игры (Dota 2, CS2, League of Legends, Apex Legends)</li>
-                    <li>Спортивные симуляторы (FIFA, NBA 2K)</li>
-                    <li>Игры с контентом 18+ или запрещённые правилами стриминговых платформ.</li>
-                </ul>
-            </li>
-            
-            <li>
-                <span class="important-title">Особенности марафонов</span>
-                <div class="important-desc">Игры длительностью 50+ часов я прохожу в рамках расписания стримов, чередуя их с другим запланированным контентом. Это позволяет сохранить интерес и не заставлять остальных зрителей смотреть только на одну игру неделями.</div>
-            </li>
-        </ol>
+        <div class="important-item" data-number="1">
+            <div class="important-title">В стоимость заказа не входит цена самой игры. 🚫</div>
+            <div class="important-desc">Если её нет в моей библиотеке, потребуется дополнительно приобрести ключ или копию игры, либо другие доступы.</div>
+        </div>
+        
+        <div class="important-item" data-number="2">
+            <div class="important-title">Ограничения на заказ. ⏳</div>
+            <div class="important-desc">К заказу не принимаются:</div>
+            <ul class="compact-list">
+                <li>Консольные эксклюзивы (у меня ПК)</li>
+                <li>MMORPG и онлайн-игры (World of Warcraft, Lost Ark)</li>
+                <li>PvP- и сессионные игры (Dota 2, CS2, League of Legends, Apex Legends)</li>
+                <li>Спортивные симуляторы (FIFA, NBA 2K)</li>
+                <li>Игры с контентом 18+ или запрещённые правилами стриминговых платформ.</li>
+            </ul>
+        </div>
+        
+        <div class="important-item" data-number="3">
+            <div class="important-title">Особенности марафонов</div>
+            <div class="important-desc">Игры длительностью 50+ часов я прохожу в рамках расписания стримов, чередуя их с другим запланированным контентом. Это позволяет сохранить интерес и не заставлять остальных зрителей смотреть только на одну игру неделями.</div>
+        </div>
         
         <div class="note">
             Сомневаешься? Напиши свой вопрос в комментариях под последним постом в моем ТГ-канале <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a> — свяжусь с тобой и проясним нюансы до оплаты.
