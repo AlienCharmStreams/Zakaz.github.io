@@ -137,8 +137,6 @@
             border-left: 4px solid #6c5ce7;
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
         .tariff-item:hover {
@@ -156,28 +154,10 @@
         }
 
         .tariff-title {
+            color: #ffffff;
             font-weight: 600;
             font-size: 1rem;
-        }
-
-        .tariff-bronze .tariff-title {
-            color: #cd7f32;
-            text-shadow: 0 0 8px rgba(205, 127, 50, 0.4);
-        }
-
-        .tariff-silver .tariff-title {
-            color: #c0c0c0;
-            text-shadow: 0 0 8px rgba(192, 192, 192, 0.4);
-        }
-
-        .tariff-gold .tariff-title {
-            color: #ffd700;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-        }
-
-        .tariff-platinum .tariff-title {
-            color: #e5e4e2;
-            text-shadow: 0 0 8px rgba(229, 228, 226, 0.4);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
         .tariff-price {
@@ -189,31 +169,11 @@
             border-radius: 20px;
         }
 
-        /* Эффекты для тарифов */
-        .tariff-bronze {
-            border-left: 4px solid #cd7f32;
-            background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), rgba(108, 92, 231, 0.08));
-        }
-
-        .tariff-silver {
-            border-left: 4px solid #c0c0c0;
-            background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), rgba(108, 92, 231, 0.08));
-        }
-
-        .tariff-gold {
-            border-left: 4px solid #ffd700;
-            background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(108, 92, 231, 0.08));
-        }
-
-        .tariff-platinum {
-            border-left: 4px solid #e5e4e2;
-            background: linear-gradient(90deg, rgba(229, 228, 226, 0.1), rgba(108, 92, 231, 0.08));
-        }
-
         /* Компактные списки */
         .compact-list {
             list-style: none;
             margin-top: 0.5rem;
+            margin-left: 1rem;
         }
 
         .compact-list li {
@@ -385,28 +345,28 @@
         <h2>💎 ТАРИФЫ</h2>
         
         <div class="tariff-list">
-            <div class="tariff-item tariff-bronze">
+            <div class="tariff-item">
                 <div class="tariff-header">
                     <div class="tariff-title">🌜 Вечерний сеанс (5-6 часов)</div>
                     <div class="tariff-price">7000 руб.</div>
                 </div>
             </div>
             
-            <div class="tariff-item tariff-silver">
+            <div class="tariff-item">
                 <div class="tariff-header">
                     <div class="tariff-title">🚀 Короткая игра (до 15 часов геймплея)</div>
                     <div class="tariff-price">10 000 руб.</div>
                 </div>
             </div>
             
-            <div class="tariff-item tariff-gold">
+            <div class="tariff-item">
                 <div class="tariff-header">
                     <div class="tariff-title">🎪 Стандартный проект (15-30 часов геймплея)</div>
                     <div class="tariff-price">20 000 руб.</div>
                 </div>
             </div>
             
-            <div class="tariff-item tariff-platinum">
+            <div class="tariff-item">
                 <div class="tariff-header">
                     <div class="tariff-title">🏆 Марафон (50+ часов геймплея)</div>
                     <div class="tariff-price">50 000 руб.</div>
