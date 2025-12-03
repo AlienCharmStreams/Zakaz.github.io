@@ -277,6 +277,28 @@
             transform: scale(1.05);
         }
 
+        /* Стиль для дополнительной оплаты */
+        .tariff-additional {
+            background: rgba(76, 60, 231, 0.05);
+            border-left: 4px solid #4c3ce7;
+            margin-top: 1rem;
+        }
+
+        .tariff-additional .tariff-title {
+            color: #a89ef2;
+            font-size: 0.95rem;
+        }
+
+        .tariff-additional .tariff-price {
+            background: rgba(76, 60, 231, 0.15);
+            font-size: 1rem;
+        }
+
+        .tariff-additional:hover {
+            background: rgba(76, 60, 231, 0.1);
+            border-left: 4px solid #5c4cf7;
+        }
+
         /* Компактные списки */
         .compact-list {
             list-style: none;
@@ -565,13 +587,14 @@
                 </div>
             </div>
             
-            <div class="tariff-item">
+            <div class="tariff-item tariff-additional">
                 <div class="tariff-header">
                     <div class="tariff-content">
-                        <div class="tariff-title">🎪 Каждые следующие +5 часов геймплея</div>
-                        <div class="tariff-description">[+ 5000 руб.]</div>
+                        <div class="tariff-title">📈 Дополнительные +5 часов геймплея</div>
                     </div>
+                    <div class="tariff-price">+ 5000 руб.</div>
                 </div>
+                <div class="tariff-description">[доплата к базовой стоимости за каждые последующие 5 часов]</div>
             </div>
         </div>
         
