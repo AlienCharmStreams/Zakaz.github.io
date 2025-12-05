@@ -633,33 +633,93 @@
         </div>
         
         <div class="note">
-            Остались вопросы?</a>. 
-            <div class="important-desc">Напиши в комментариях под последним постом в моем Телеграмм-канале <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.
+    Остались вопросы? 
+    <div class="important-desc">Напиши в комментариях под последним постом в моем Телеграмм-канале <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.</div>
+</div>
+
+<div class="section">
+    <h2>FAQ</h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">Q: Как происходит оплата и заказ?</div>
+        <div class="faq-answer">
+            A: Оплата происходит донатом через DonationAlerts, либо DonatePay.<br>
+            В комментарии к донату укажите название игры.<br>
+            Можно также открыть совместный сбор на игру, если есть желающие.
         </div>
     </div>
-
-    <div class="section">
-        <h2>FAQ</h2>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: Как происходит оплата и заказ?</div>
-            <div class="faq-answer">A: Оплата происходит донатом через DonationAlerts, либо DonatePay.</div> 
-       В комментарии к донату укажите название игры. Можно также открыть совместный сбор на игру, если есть желающие.</div></div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: Что если я передумаю?</div>
-            <div class="faq-answer">A: Если игра ещё не была начата, возможен перенос суммы на другой заказ. Если стрим уже был начат — перенос невозможен.
-            Донат возврату не подлежит.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: Как уточнить вопросы заранее до оплаты?</div>
-            <div class="faq-answer">A: Написать во время стрима (отвечу я или модераторы в Чате) или в комментариях под последним постом в Телеграм-канале - <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.</div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Q: Что если я передумаю?</div>
+        <div class="faq-answer">
+            A: Если игра ещё не была начата, возможен перенос суммы на другой заказ.<br>
+            Если стрим уже был начат — перенос невозможен.<br>
+            Донат возврату не подлежит.
         </div>
     </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Q: Как уточнить вопросы заранее до оплаты?</div>
+        <div class="faq-answer">
+            A: Написать во время стрима (отвечу я или модераторы в Чате)<br>
+            или в комментариях под последним постом в Телеграм-канале - <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.
+        </div>
+    </div>
+</div>
 
-    <script>
+<style>
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #f5f5f5;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #e9e9e9;
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none;
+    background-color: white;
+    line-height: 1.6;
+}
+
+.faq-answer.active {
+    display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            
+            // Закрываем все остальные ответы
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Открываем/закрываем текущий ответ
+            answer.classList.toggle('active');
+        });
+    });
+});
+</script>
         function createParticles() {
             const colors = [
                 'rgba(108, 92, 231, 0.1)',
