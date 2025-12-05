@@ -126,6 +126,16 @@
         .subtitle {
             color: #888;
             font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .subtitle-line {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle-line:last-child {
+            margin-bottom: 0;
         }
 
         h2 {
@@ -383,10 +393,20 @@
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
             transition: all 0.3s ease;
+            line-height: 1.6;
         }
 
         .important-item:hover .important-desc {
             color: #ccc;
+        }
+
+        .desc-line {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .desc-line:last-child {
+            margin-bottom: 0;
         }
 
         /* ИСПРАВЛЕННЫЙ FAQ */
@@ -511,6 +531,7 @@
             font-size: 0.9rem;
             border-left: 3px solid #6c5ce7;
             transition: all 0.3s ease;
+            line-height: 1.6;
         }
 
         .note:hover {
@@ -539,6 +560,15 @@
         .note:hover .note-title {
             color: #8c7bee;
             text-shadow: 0 0 8px rgba(140, 123, 238, 0.3);
+        }
+
+        .note-line {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .note-line:last-child {
+            margin-bottom: 0;
         }
 
         @media (max-width: 600px) {
@@ -578,7 +608,10 @@
 <body>
     <div class="header">
         <h1>ЗАКАЗЫ ИГР</h1>
-        <p class="subtitle">На канале запланированы прохождения множества игр. Если не хочешь ждать или не уверен в появлении любимой игры - можешь заказать!</p>
+        <p class="subtitle">
+            <span class="subtitle-line">На канале запланированы прохождения множества игр.</span>
+            <span class="subtitle-line">Если не хочешь ждать или не уверен в появлении любимой игры - можешь заказать!</span>
+        </p>
     </div>
 
     <div class="section">
@@ -626,7 +659,8 @@
         
         <div class="note">
             <p class="note-title">Как определить длительность геймплея?</p>
-            <p>Можно воспользваться данными сайта <a href="https://howlongtobeat.com/" target="_blank">HowLongToBeat.com</a> (значение "Main + Extra"). Это база данных, куда сами игроки со всего мира вносят данные о времени, которое они потратили на прохождение той или иной игры.</p>
+            <p class="note-line">Можно воспользоваться данными сайта <a href="https://howlongtobeat.com/" target="_blank">HowLongToBeat.com</a> (значение "Main + Extra").</p>
+            <p class="note-line">Это база данных, куда сами игроки со всего мира вносят данные о времени, которое они потратили на прохождение той или иной игры.</p>
         </div>
     </div>
 
@@ -639,7 +673,7 @@
         </div>
         
         <div class="important-item" data-number="2">
-            <div class="important-title">Ограничения на заказ. ⏳</div>
+            <div class="important-title">Ограничения на заказ.</div>
             <div class="important-desc">К заказу не принимаются:</div>
             <ul class="compact-list">
                 <li>Консольные эксклюзивы (у меня ПК)</li>
@@ -652,11 +686,16 @@
         
         <div class="important-item" data-number="3">
             <div class="important-title">Особенности прохождений игр на заказ</div>
-            <div class="important-desc">Игры я прохожу в рамках расписания стримов, чередуя их с другим запланированным контентом. Это позволяет сохранить интерес и не заставлять остальных зрителей смотреть только на одну игру неделями.</div>
+            <div class="important-desc">
+                <span class="desc-line">Игры я прохожу в рамках расписания стримов, чередуя их с другим запланированным контентом.</span>
+                <span class="desc-line">Это позволяет сохранить интерес и не заставлять остальных зрителей смотреть только на одну игру неделями.</span>
+            </div>
         </div>
         
         <div class="note">
-            Остались вопросы? Напиши в комментариях под последним постом в моем Телеграмм-канале <a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.
+            <p class="note-line">Остались вопросы?</p>
+            <p class="note-line">Напиши в комментариях под последним постом в моем Телеграмм-канале</p>
+            <p class="note-line"><a href="https://t.me/AlienCharm" target="_blank">https://t.me/AlienCharm</a>.</p>
         </div>
     </div>
 
